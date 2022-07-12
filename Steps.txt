@@ -1,0 +1,15 @@
+* Steps of vulkan initialization
+- Create ash::entry
+- Create vk::ApplicationInfo
+- Declare vulkan_debug_utils_callback function
+- Set layer names (For validation layers)
+- Set extension names (For debug utils)
+- Create vk::DebugUtilsMessengerCreateInfo
+- Create vk::InstanceCreateInfo
+- Create vulkan Instance
+- Create ash::extensions::ext::DebugUtils
+- Create vk::DebugUtilsMessengerExt
+- Create vk::PhysicalDevice
+- Iterate in physical devices for best GPU
+- Destroy debug_utils_messenger
+- Destroy instance

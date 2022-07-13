@@ -136,6 +136,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let surface_capabilities = unsafe {
         surface_loader.get_physical_device_surface_capabilities(physical_device, surface)
     };
+    let surface_present_modes = unsafe {
+        surface_loader.get_physical_device_surface_present_modes(physical_device, surface)
+    };
+    let surface_formats =
+        unsafe { surface_loader.get_physical_device_surface_formats(physical_device, surface) };
+    dbg!(&surface_capabilities);
+    dbg!(&surface_present_modes);
+    dbg!(&surface_formats);
+
+    let queue_families = [queue_family_indices.0];
 
     unsafe {
         surface_loader.destroy_surface(surface, None);
